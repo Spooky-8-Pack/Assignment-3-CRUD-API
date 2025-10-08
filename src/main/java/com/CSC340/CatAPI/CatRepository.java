@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CatRepository extends JpaRepository<Cat, Long> {
 
-    List<Cat> getCatsByID(Long Id);
+    List<Cat> getCatsByBreed(String breed);
 
-    @Query(value = "select * from cats s where s.age > ?5", nativeQuery = true)
+    @Query(value = "select * from cats s where s.age >= ?1", nativeQuery = true)
     List<Cat> getElderlyCats(double age);
 
     @Query(value = "select * from cats s where s.name like %?1%", nativeQuery = true)
