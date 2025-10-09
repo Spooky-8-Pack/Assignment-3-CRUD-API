@@ -31,7 +31,7 @@ public class CatService {
         return catRepository.getCatsByName(name);
     }
 
-    //Get all cats above a certain age
+    //get all cats above a certain age (elderly)
     public Object getElderlyCats(double age){
         return catRepository.getElderlyCats(age);
     }
