@@ -23,7 +23,7 @@ Simple CRUD API for managing a database of Cats
     - Paste it as a value for the property `spring.datasource.url`. No quotation marks.
 - Build and run the main class. You should see a new table created in the Neon database.
 ## Video Demo
-[Video Demo Link](https://uncg-my.sharepoint.com/personal/agaldridge_uncg_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fagaldridge%5Funcg%5Fedu%2FDocuments%2FCat%20API%20demo%20Adrian%20Aldridge%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E54ab54cc%2D0821%2D4e45%2D9ac3%2D11548fa5f733)
+[Video Demo Link]([https://uncg-my.sharepoint.com/personal/agaldridge_uncg_edu/_layouts/15/stream.aspx?id=%2Fpersonal%2Fagaldridge%5Funcg%5Fedu%2FDocuments%2FCat%20API%20demo%20Adrian%20Aldridge%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E54ab54cc%2D0821%2D4e45%2D9ac3%2D11548fa5f733](https://uncg-my.sharepoint.com/:v:/g/personal/agaldridge_uncg_edu/EVoTazw8wtNFqSNvWntuaGsBxvWNsw_Xpt51dsiityH1DQ?e=U5TxZV&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D))
 
 ## API Endpoints
 Base URL: [`http://localhost:8080/cats`](http://localhost:8080/cats)
