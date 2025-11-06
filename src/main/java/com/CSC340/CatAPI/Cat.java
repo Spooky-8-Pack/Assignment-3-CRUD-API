@@ -44,12 +44,12 @@ public class Cat {
     }
 
     //getters & setters
-    public Long getcatID(){
+    public Long getCatId(){
         return catId;
     }
 
-    public void setcatID(Long id){
-        this.catId = id;
+    public void setCatId(Long catId){
+        this.catId = catId;
     }
 
     public String getName(){

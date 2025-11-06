@@ -3,7 +3,6 @@ package com.CSC340.CatAPI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -79,29 +78,29 @@ public class CatController {
     public Object addCat(Cat cat, @RequestParam MultipartFile picture){
         //return catService.addCat(cat);
         Cat newCat = catService.addCat(cat, picture);
-        return "redirect:/cats/" + newCat.getcatID();
+        return "redirect:/cats/" + newCat.getCatId();
     }
 
     //show update form
     @GetMapping("/cats/updateForm/{id}")
-    public Object showUpdateForm(@PathVariable Long id, Model model) {
-        Cat cat = catService.getCatById(id);
+    public Object showUpdateForm(@PathVariable Long catId, Model model) {
+        Cat cat = catService.getCatById(catId);
         model.addAttribute("cat", cat);
-        model.addAttribute("title", "Update Cat: " + id);
+        model.addAttribute("title", "Update Cat: " + catId);
         return "cat-update";
   }
 
     //update a cat
     @PostMapping("/cats/updateForm/{id}")
-    public Object updateCat(@PathVariable Long id, Cat cat, @RequestParam MultipartFile picture){
-        catService.updateCat(id, cat, picture);
-        return "redirect:/cats/" + id;
+    public Object updateCat(@PathVariable Long catId, Cat cat, @RequestParam MultipartFile picture){
+        catService.updateCat(catId, cat, picture);
+        return "redirect:/cats/" + catId;
     }
     
     //delete a cat
-    @DeleteMapping("/cats/delete/{id}")
-    public Object deleteCat(@PathVariable Long id){
-        catService.deleteCat(id);
+    @GetMapping("/cats/delete/{id}")
+    public Object deleteCat(@PathVariable Long catId){
+        catService.deleteCat(catId);
         return "redirect:/cats/";
     }
 

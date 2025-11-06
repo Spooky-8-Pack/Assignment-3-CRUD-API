@@ -51,7 +51,7 @@ public class CatService {
         try{
             if(originalFileName != null && originalFileName.contains(".")){
                 String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."), + 1);
-                String fileName = String.valueOf(newCat.getcatID()) + "." + fileExtension;
+                String fileName = String.valueOf(newCat.getCatId()) + "." + fileExtension;
                 Path filePath = Paths.get(UPLOAD_DIR + fileName);
 
                 InputStream inputStream = catPicture.getInputStream();
