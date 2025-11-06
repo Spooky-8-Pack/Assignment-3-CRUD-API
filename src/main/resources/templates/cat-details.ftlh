@@ -69,7 +69,7 @@
                 <p><strong>Breed:</strong> ${cat.breed}</p>
                 <p><strong>Age:</strong> ${cat.age} years</p>
                 <p><strong>Description:</strong> ${cat.description}</p>
-                <a href ="/cats/delete/${cat.catId?c}">Delete</a>
+                <a href ="/cats/delete/${cat.catId}">Delete</a>
               </div>     
         </main>
     </body>

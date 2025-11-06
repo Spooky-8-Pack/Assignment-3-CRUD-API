@@ -85,9 +85,9 @@
     <a href="/cats/createForm">Add New Cat</a>
   </nav>
   <main>
-    <form id="new-cat" action="/cats/updateForm/${cat.catId?c}" method="post" enctype="multipart/form-data">
+    <form id="new-cat" action="/cats/updateForm/${cat.catId}" method="post" enctype="multipart/form-data">
       <label for="catId">Cat ID</label>
-      <input type="text" id="catId" name="catId" value="${cat.catId?c}" readonly />
+      <input type="text" id="catId" name="catId" value="${cat.catId}" readonly />
 
      <label for="name">Cat Name</label>
       <input type="text" id="name" name="name" value="${cat.name}" placeholder="Name" />
@@ -107,7 +107,7 @@
  
 
       <button type="submit">Add Cat</button>
-      <a href="/cats/${cat.catId?c}">Cancel</a>
+      <a href="/cats/${cat.catId}">Cancel</a>
 
       <div id="message" role="alert"></div>
     </form>

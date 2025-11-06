@@ -15,7 +15,7 @@ public class CatController {
     private CatService catService;
 
     //get all cats
-    @GetMapping("/cats")
+    @GetMapping({"/cats", "/cats/"})
     public Object getAllCats(Model model){
         //return catService.getAllCats();
         model.addAttribute("catList", catService.getAllCats());
