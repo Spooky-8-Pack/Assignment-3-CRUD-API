@@ -24,7 +24,15 @@ public class Cat {
     private String catPicturePath;
 
 
+    public Cat(String name, String description, String breed, double age) {
+        this.name = name;
+        this.description = description;
+        this.breed = breed;
+        this.age = age;
+    }
+
     public Cat(){
+
     }
 
     public Cat(Long catId, String name, String description, String breed, double age, String catPicturePath) {
@@ -35,7 +43,7 @@ public class Cat {
         this.age = age;
         this.catPicturePath = catPicturePath;
     }
- 
+    
     public Cat(String name, String description, String breed, double age, String catPicturePath) {
         this.name = name;
         this.description = description;

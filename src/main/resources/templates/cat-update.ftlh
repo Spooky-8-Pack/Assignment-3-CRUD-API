@@ -101,11 +101,6 @@
       <label for="description">Description</label>
       <textarea id="description" name="description" value="${cat.description}" rows="4" placeholder="Summary"></textarea>
 
-      <label for="catPicturePath">Current Image</label>
-      <input type="file" id="catPicturePath" name="catPicturePath" value="${cat.catPicturePath}" readonly/>
-      <input type="file" id="picture" name="picture"/>
- 
-
       <button type="submit">Add Cat</button>
       <a href="/cats/${cat.catId}">Cancel</a>
 

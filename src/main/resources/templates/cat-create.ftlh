@@ -85,7 +85,7 @@
     <a href="/cats/createForm">Add New Cat</a>
   </nav>
   <main>
-    <form id="new-cat" action ="/cats" method="post" enctype="multipart/form-data">
+    <form id="new-cat" action ="/cats/createForm" method="post" enctype="multipart/form-data">
       <label for="name">Cat Name</label>
       <input type="text" id="name" name="name" placeholder="Name" />
 
@@ -97,9 +97,6 @@
 
       <label for="description">Description</label>
       <textarea id="description" name="description" rows="4" placeholder="Summary"></textarea>
-
-      <label for="image">Image</label>
-      <input type="file" id="image" name="image" required/>
 
       <button type="submit">Add Cat</button>
       <a href="/cats">Cancel</a>

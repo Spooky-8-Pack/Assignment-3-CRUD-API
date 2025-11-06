@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class CatController {
@@ -74,11 +73,11 @@ public class CatController {
     }
 
     //add new cat
-    @PostMapping("/cats")
-    public Object addCat(Cat cat, @RequestParam MultipartFile picture){
+    @PostMapping("/cats/createForm")
+    public Object addCat(Cat cat){
         //return catService.addCat(cat);
-        Cat newCat = catService.addCat(cat, picture);
-        return "redirect:/cats" + newCat.getCatId();
+        catService.addCat(cat);
+        return "redirect:/cats";
     }
 
     //show update form
@@ -92,8 +91,8 @@ public class CatController {
 
     //update a cat
     @PostMapping("/cats/updateForm/{id}")
-    public Object updateCat(@PathVariable Long catId, Cat cat, @RequestParam MultipartFile picture){
-        catService.updateCat(catId, cat, picture);
+    public Object updateCat(@PathVariable Long catId, Cat cat){
+        catService.updateCat(catId, cat);
         return "redirect:/cats" + catId;
     }
     
