@@ -22,26 +22,28 @@ public class Cat {
     private String breed;
     private double age;
     private String catPicturePath;
-    
-    //blank constructor
-    public Cat(){
 
+
+    public Cat(){
     }
 
-    //constructor given: ID, name, breed, age, and picture
-    public Cat(Long catId, String name, String breed, double age, String catPicturePath){
+    public Cat(Long catId, String name, String description, String breed, double age, String catPicturePath) {
         this.catId = catId;
         this.name = name;
+        this.description = description;
         this.breed = breed;
         this.age = age;
+        this.catPicturePath = catPicturePath;
     }
-
-    //constructor given: name, breed, age, and picture
-    public Cat(String name, String breed, double age, String catPicturePath){
+ 
+    public Cat(String name, String description, String breed, double age, String catPicturePath) {
         this.name = name;
-        this.age = age;
+        this.description = description;
         this.breed = breed;
+        this.age = age;
+        this.catPicturePath = catPicturePath;
     }
+    
 
     //getters & setters
     public Long getCatId(){

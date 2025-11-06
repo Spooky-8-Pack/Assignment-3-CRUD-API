@@ -15,7 +15,7 @@ public class CatController {
     private CatService catService;
 
     //get all cats
-    @GetMapping({"/cats", "/cats/"})
+    @GetMapping("/cats")
     public Object getAllCats(Model model){
         //return catService.getAllCats();
         model.addAttribute("catList", catService.getAllCats());
@@ -42,7 +42,7 @@ public class CatController {
             return "cat-list";
         }
         else{
-            return "redirect:/cats/";
+            return "redirect:/cats";
         }
     }
 
@@ -78,7 +78,7 @@ public class CatController {
     public Object addCat(Cat cat, @RequestParam MultipartFile picture){
         //return catService.addCat(cat);
         Cat newCat = catService.addCat(cat, picture);
-        return "redirect:/cats/" + newCat.getCatId();
+        return "redirect:/cats" + newCat.getCatId();
     }
 
     //show update form
@@ -94,14 +94,14 @@ public class CatController {
     @PostMapping("/cats/updateForm/{id}")
     public Object updateCat(@PathVariable Long catId, Cat cat, @RequestParam MultipartFile picture){
         catService.updateCat(catId, cat, picture);
-        return "redirect:/cats/" + catId;
+        return "redirect:/cats" + catId;
     }
     
     //delete a cat
     @GetMapping("/cats/delete/{id}")
-    public Object deleteCat(@PathVariable Long catId){
-        catService.deleteCat(catId);
-        return "redirect:/cats/";
+    public Object deleteCat(@PathVariable Long id){
+        catService.deleteCat(id);
+        return "redirect:/cats";
     }
 
     
