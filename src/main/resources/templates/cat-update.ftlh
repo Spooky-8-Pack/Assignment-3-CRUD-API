@@ -81,12 +81,11 @@
     <h1>Add a New Cat</h1>
   </header>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="new-animal-form.html">Add New Cat</a>
+    <a href="/cats">Home</a>
+    <a href="/cats/createForm">Add New Cat</a>
   </nav>
   <main>
-    <form id="animalForm" novalidate>
+    <form id="new-cat" action="/cats/updateForm/${cat.catId?c}" method="post" enctype="multipart/form-data">
       <label for="catId">Cat ID</label>
       <input type="text" id="catId" name="catId" value="${cat.catId?c}" readonly />
 
@@ -102,8 +101,10 @@
       <label for="description">Description</label>
       <textarea id="description" name="description" value="${cat.description}" rows="4" placeholder="Summary"></textarea>
 
-      <label for="image">Image</label>
-      <input type="file" id="catPicturePath" name="catPicturePath" value="${cat.catPicturePath}" required/>
+      <label for="catPicturePath">Current Image</label>
+      <input type="file" id="catPicturePath" name="catPicturePath" value="${cat.catPicturePath}" readonly/>
+      <input type="file" id="picture" name="picture"/>
+ 
 
       <button type="submit">Add Cat</button>
       <a href="/cats/${cat.catId?c}">Cancel</a>

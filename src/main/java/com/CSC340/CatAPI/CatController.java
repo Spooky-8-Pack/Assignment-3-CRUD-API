@@ -92,7 +92,7 @@ public class CatController {
   }
 
     //update a cat
-    @PostMapping("/cats/update/{id}")
+    @PostMapping("/cats/updateForm/{id}")
     public Object updateCat(@PathVariable Long id, Cat cat, @RequestParam MultipartFile picture){
         catService.updateCat(id, cat, picture);
         return "redirect:/cats/" + id;

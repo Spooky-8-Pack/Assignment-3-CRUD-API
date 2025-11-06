@@ -64,12 +64,12 @@
           <a href="/cats/createForm">Add New Cat</a>
           </nav>
         <main id="content">
-         <h2>${animal.name}</h2>
-              <img src="${animal.image}" alt="Image of ${animal.name}" class="animal-image" />
+         <h2>${cat.name}</h2>
               <div class="animal-details">
-                <p><strong>Breed:</strong> ${animal.breed}</p>
-                <p><strong>Age:</strong> ${animal.age} years</p>
-                <p><strong>Summary:</strong> ${animal.summary}</p>
+                <p><strong>Breed:</strong> ${cat.breed}</p>
+                <p><strong>Age:</strong> ${cat.age} years</p>
+                <p><strong>Description:</strong> ${cat.description}</p>
+                <a href ="/cats/delete/${cat.catId?c}">Delete</a>
               </div>     
         </main>
     </body>

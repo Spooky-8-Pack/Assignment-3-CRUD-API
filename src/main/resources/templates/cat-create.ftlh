@@ -85,7 +85,7 @@
     <a href="/cats/createForm">Add New Cat</a>
   </nav>
   <main>
-    <form id="animalForm" action ="/cats" method="post" enctype="multipart/form-data">
+    <form id="new-cat" action ="/cats" method="post" enctype="multipart/form-data">
       <label for="name">Cat Name</label>
       <input type="text" id="name" name="name" placeholder="Name" />
 
