@@ -81,31 +81,30 @@
     <h1>Add a New Cat</h1>
   </header>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="new-animal-form.html">Add New Cat</a>
+    <a href="/cats">Home</a>
+    <a href="/cats/createForm">Add New Cat</a>
   </nav>
   <main>
-    <form id="animalForm" novalidate>
-      <label for="name">Cat Name *</label>
-      <input type="text" id="name" name="name" required />
+    <form id="animalForm" action ="/cats" method="post" enctype="multipart/form-data">
+      <label for="name">Cat Name</label>
+      <input type="text" id="name" name="name" placeholder="Name" />
 
-      <label for="breed">Breed *</label>
-      <input type="text" id="species" name="species" required />
+      <label for="breed">Breed</label>
+      <input type="text" id="breed" name="breed" placeholder="Breed" />
 
-      <label for="age">Age (years) *</label>
-      <input type="number" id="age" name="age" min="0" required />
+      <label for="age">Age(years)</label>
+      <input type="number" id="age" name="age" min="0" placeholder="0" />
 
-      <label for="summary">Summary *</label>
-      <textarea id="summary" name="summary" rows="4" required></textarea>
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="4" placeholder="Summary"></textarea>
 
-      <label for="image">Image URL *</label>
-      <input type="text" id="image" name="image" required />
+      <label for="image">Image</label>
+      <input type="file" id="image" name="image" required/>
 
       <button type="submit">Add Cat</button>
+      <a href="/cats">Cancel</a>
       <div id="message" role="alert"></div>
     </form>
   </main>
-<!--Form is fillable but doesn't actually do anything-->
 </body>
 </html>

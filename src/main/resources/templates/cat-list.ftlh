@@ -100,113 +100,24 @@
       <h1>Adrians Cat Gallery</h1>
     </header>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="new-animal-form.html">Add New Cat</a>
+        <a href="/cats">Home</a>
+        <a href="/cats/createForm">Add New Cat</a>
       </nav>
       <main>
         <div class="search-bar">
           <input type="text" id="searchInput" placeholder="Search animals..." />
         </div>
         <div class="gallery" id="gallery">
-          <!-- added by JS-->
+        <#list catList as cat>
+        <div class="animal-card">
+            <div class="animal-info">
+                <div class="animal-name">${cat.name}</div>
+                <div class="animal-summary">${cat.description}</div>
+            </div>
+        </div>
+        </#list>
         </div>
       </main>
-
-      <script>
-        //old JS
-        /*
-        const animals = [
-          {
-            name: 'Orion',
-            breed: 'Short-hair Tabby',
-            age: 7,
-            summary: 'Orion is a sweet boy who loves naps and cuddling',
-            image: 'https://raw.githubusercontent.com/Spooky-8-Pack/Assignment-2-Static-Web-App/refs/heads/main/Cat%20Images/Cat%20Orion.jpg',
-          },
-          {
-            name: 'Tiger Tail (TT)',
-            breed: 'Long-hair Diluted Tortie',
-            age: 19,
-            summary: 'TT is queen of the house and loves cheese',
-            image: 'https://raw.githubusercontent.com/Spooky-8-Pack/Assignment-2-Static-Web-App/refs/heads/main/Cat%20Images/Cat%20TT.jpg',
-          },
-          {
-            name: 'Babycat',
-            breed: 'Long-hair Half-tux',
-            age: 18,
-            summary: 'Babycat is TTs younger brother and a huge sweetheart',
-            image: 'https://raw.githubusercontent.com/Spooky-8-Pack/Assignment-2-Static-Web-App/refs/heads/main/Cat%20Images/Cat%20Babycat.jpg',
-          },
-          {
-            name: 'Diesel',
-            breed: 'Long-hair Tuxedo',
-            age: 9,
-            summary: 'Diesel can be fiesty but shes full of love',
-            image: 'https://raw.githubusercontent.com/Spooky-8-Pack/Assignment-2-Static-Web-App/refs/heads/main/Cat%20Images/Cat%20Diesel.jpg',
-            
-          },
-          {
-            name: 'Benny',
-            breed: 'Long-hair Tabby',
-            age: 4,
-            summary: 'Benny is playful, loving, and shaped roughly like a basketball',
-            image: 'https://raw.githubusercontent.com/Spooky-8-Pack/Assignment-2-Static-Web-App/refs/heads/main/Cat%20Images/Cat%20Benny.jpg',
-          }
-        ];
-        */
-      const gallery = document.getElementById('gallery');
-      const searchInput = document.getElementById('searchInput');
-
-      function createAnimalCard(animal) {
-      const card = document.createElement('div');
-      card.className = 'animal-card';
-      card.tabIndex = 0;
-      card.setAttribute('role', 'button');
-      card.setAttribute('aria-label', `More details about ${animal.name}`);
-      card.innerHTML = `
-        <img src="${animal.image}" alt="Image of ${animal.name}" />
-        <div class="animal-info">
-          <div class="animal-name">${animal.name}</div>
-          <div class="animal-summary">${animal.summary}</div>
-        </div>
-      `;
-      card.addEventListener('click', () => {
-        // Store selected animal in sessionStorage and navigate to details page
-        sessionStorage.setItem('selectedAnimal', JSON.stringify(animal));
-        window.location.href = 'details.html';
-      });
-      card.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          card.click();
-        }
-      });
-      return card;
-    }
-
-    function renderGallery(filterText = '') {
-      gallery.innerHTML = '';
-      const filteredAnimals = animals.filter(a =>
-        a.name.toLowerCase().includes(filterText.toLowerCase()) ||
-        a.species.toLowerCase().includes(filterText.toLowerCase())
-      );
-      if (filteredAnimals.length === 0) {
-        gallery.innerHTML = '<p>No animals found matching your search.</p>';
-        return;
-      }
-      filteredAnimals.forEach(animal => {
-        gallery.appendChild(createAnimalCard(animal));
-      });
-    }
-
-    searchInput.addEventListener('input', (e) => {
-      renderGallery(e.target.value);
-    });
-
-    // Initial render
-    renderGallery();
-
       </script>
   </body>
 </html>

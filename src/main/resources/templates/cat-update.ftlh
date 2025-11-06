@@ -87,25 +87,29 @@
   </nav>
   <main>
     <form id="animalForm" novalidate>
-      <label for="name">Cat Name *</label>
-      <input type="text" id="name" name="name" required />
+      <label for="catId">Cat ID</label>
+      <input type="text" id="catId" name="catId" value="${cat.catId?c}" readonly />
 
-      <label for="breed">Breed *</label>
-      <input type="text" id="species" name="species" required />
+     <label for="name">Cat Name</label>
+      <input type="text" id="name" name="name" value="${cat.name}" placeholder="Name" />
 
-      <label for="age">Age (years) *</label>
-      <input type="number" id="age" name="age" min="0" required />
+      <label for="breed">Breed</label>
+      <input type="text" id="breed" name="breed" value="${cat.breed}" placeholder="Breed" />
 
-      <label for="summary">Summary *</label>
-      <textarea id="summary" name="summary" rows="4" required></textarea>
+      <label for="age">Age(years)</label>
+      <input type="number" id="age" name="age" value="${cat.age}" min="0" placeholder="0" />
 
-      <label for="image">Image URL *</label>
-      <input type="text" id="image" name="image" required />
+      <label for="description">Description</label>
+      <textarea id="description" name="description" value="${cat.description}" rows="4" placeholder="Summary"></textarea>
+
+      <label for="image">Image</label>
+      <input type="file" id="catPicturePath" name="catPicturePath" value="${cat.catPicturePath}" required/>
 
       <button type="submit">Add Cat</button>
+      <a href="/cats/${cat.catId?c}">Cancel</a>
+
       <div id="message" role="alert"></div>
     </form>
   </main>
-<!--Form is fillable but doesn't actually do anything-->
 </body>
 </html>

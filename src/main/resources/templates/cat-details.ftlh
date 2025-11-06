@@ -60,32 +60,17 @@
           <h1>Cat Details</h1>
         </header>
         <nav>
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="new-animal-form.html">Add New Cat</a>
+          <a href="/cats">Home</a>
+          <a href="/cats/createForm">Add New Cat</a>
           </nav>
         <main id="content">
-          <!-- Details in JS-->
-        </main>
-
-        <script>
-          const content = document.getElementById('content');
-          const animalData = sessionStorage.getItem('selectedAnimal');
-
-          if (!animalData) {
-            content.innerHTML = '<p>No animal selected. Please go back to the <a href="index.html">gallery</a>.</p>';
-          } 
-          else {
-            const animal = JSON.parse(animalData);
-            content.innerHTML = `
-              <h2>${animal.name}</h2>
+         <h2>${animal.name}</h2>
               <img src="${animal.image}" alt="Image of ${animal.name}" class="animal-image" />
               <div class="animal-details">
-              <p><strong>Breed:</strong> ${animal.breed}</p>
-              <p><strong>Age:</strong> ${animal.age} years</p>
-              <p><strong>Summary:</strong> ${animal.summary}</p>
-              </div>      `; 
-          }
-        </script>
+                <p><strong>Breed:</strong> ${animal.breed}</p>
+                <p><strong>Age:</strong> ${animal.age} years</p>
+                <p><strong>Summary:</strong> ${animal.summary}</p>
+              </div>     
+        </main>
     </body>
 </html>
