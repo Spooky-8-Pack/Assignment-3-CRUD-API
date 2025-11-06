@@ -69,6 +69,7 @@
                 <p><strong>Breed:</strong> ${cat.breed}</p>
                 <p><strong>Age:</strong> ${cat.age} years</p>
                 <p><strong>Description:</strong> ${cat.description}</p>
+                <a href="/cats/updateForm/${cat.catId}">Update</a> </br>
                 <a href ="/cats/delete/${cat.catId}">Delete</a>
               </div>     
         </main>

@@ -41,7 +41,7 @@ public class CatController {
             return "cat-list";
         }
         else{
-            return "redirect:/cats";
+            return "redirect:/cats/";
         }
     }
 
@@ -77,30 +77,29 @@ public class CatController {
     public Object addCat(Cat cat){
         //return catService.addCat(cat);
         catService.addCat(cat);
-        return "redirect:/cats";
+        return "redirect:/cats/";
     }
 
     //show update form
     @GetMapping("/cats/updateForm/{id}")
-    public Object showUpdateForm(@PathVariable Long catId, Model model) {
-        Cat cat = catService.getCatById(catId);
+    public Object showUpdateForm(@PathVariable Long id, Model model) {
+        Cat cat = catService.getCatById(id);
         model.addAttribute("cat", cat);
-        model.addAttribute("title", "Update Cat: " + catId);
         return "cat-update";
   }
 
     //update a cat
     @PostMapping("/cats/updateForm/{id}")
-    public Object updateCat(@PathVariable Long catId, Cat cat){
-        catService.updateCat(catId, cat);
-        return "redirect:/cats" + catId;
+    public Object updateCat(@PathVariable Long id, Cat cat){
+        catService.updateCat(id, cat);
+        return "redirect:/cats/" + id;
     }
     
     //delete a cat
     @GetMapping("/cats/delete/{id}")
     public Object deleteCat(@PathVariable Long id){
         catService.deleteCat(id);
-        return "redirect:/cats";
+        return "redirect:/cats/";
     }
 
     

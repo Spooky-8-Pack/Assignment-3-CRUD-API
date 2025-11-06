@@ -113,6 +113,7 @@
             <div class="animal-info">
                 <div class="animal-name">${cat.name}</div>
                 <div class="animal-summary">${cat.description}</div>
+                <a href="/cats/${cat.catId}"> View More Details</a>
             </div>
         </div>
         </#list>
